@@ -29,7 +29,7 @@ const Login = () => {
                 'Content-Type': "application/json"
             },
             body: JSON.stringify({ email, password }),
-            credentials: true 
+            credentials: "include"
         });
 
         const data = await res.json();
