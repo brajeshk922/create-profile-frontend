@@ -2,6 +2,22 @@
   text-align: center;
 }
 
+body, html {
+  height: 100%;
+  margin: 0;
+}
+.Login-component {
+  /* The image used */
+  background-image: url(./images/light.jpg);
+
+  /* Full height */
+  height: 100vh; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
