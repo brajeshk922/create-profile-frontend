@@ -25,6 +25,7 @@ const Login = () => {
 
         const res = await fetch('https://create-profile-backend.herokuapp.com/signin', {
             method: 'POST',
+            mode:"cors",
             headers: {
                 'Content-Type': "application/json"
             },

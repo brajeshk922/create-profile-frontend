@@ -12,6 +12,7 @@ const Logout = () => {
     useEffect(() => {
         fetch('https://create-profile-backend.herokuapp.com/logout', {
             method: "GET",
+            mode:"cors",
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json",

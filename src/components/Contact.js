@@ -7,6 +7,7 @@ const Contact = () => {
         try {
             const res = await fetch('https://create-profile-backend.herokuapp.com/getdata', {
                 method: "GET",
+                mode: "cors",
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -37,6 +38,7 @@ const Contact = () => {
         const { name, email, phone, message } = userData;
         const res = await fetch('https://create-profile-backend.herokuapp.com/contact', {
             method: "POST",
+            mode: "cors",
             headers: {
                 "Content-Type": "application/json"
             },
