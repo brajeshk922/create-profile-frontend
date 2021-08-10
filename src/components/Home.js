@@ -8,7 +8,6 @@ const Home = () => {
     const userHomePage = async () => {
         try {
             const res = await fetch('https://create-profile-backend.herokuapp.com/getdata', {
-                mode:"cors",
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
