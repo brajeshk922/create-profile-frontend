@@ -21,7 +21,7 @@ const About = () => {
                     Accept: "application/json",
                     "Content-Type": "application/json"
                 },
-                credentials: "include"
+                credentials: "same-origin"
             })
 
             const data = await res.json();

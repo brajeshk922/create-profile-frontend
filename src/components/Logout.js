@@ -16,7 +16,7 @@ const Logout = () => {
                 Accept: "application/json",
                 "Content-Type": "application/json",
             },
-            credentials: "include"
+            credentials: "same-origin"
         }).then((res) => {
             dispatch({ type: "USER", payload: false });
             history.push('/login', { replace: true });
