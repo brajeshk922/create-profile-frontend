@@ -10,7 +10,7 @@ const Logout = () => {
     const history = useHistory();
 
     useEffect(() => {
-        fetch('/logout', {
+        fetch('https://create-profile-backend.herokuapp.com/logout', {
             method: "GET",
             headers: {
                 Accept: "application/json",
