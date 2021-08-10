@@ -37,7 +37,7 @@ const Login = () => {
             window.alert('invalid credentials');
         } else {
             dispatch({ type: "USER", payload: true });
-            window.alert("login successful");
+            window.alert(`login successful ${data}` );
             history.push('/');
         }
 
