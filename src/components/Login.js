@@ -33,9 +33,20 @@ const Login = () => {
             },
             body: JSON.stringify({ email, password }),
             credentials: "include"
-        })    .then((response) => await response.json())
-        .then((messages) => {console.log("messages");});;
-        
+        }).then((response) => {
+            const data = response.json()
+            if (data.status === 400 || !data) {
+                window.alert('invalid credentials');
+            } else {
+                dispatch({ type: "USER", payload: true });
+                window.alert(`login successful ${data.message}`);
+                cookies.set('myCat', `${data.coky}`, { path: '/' });
+                history.push('/');
+            }
+        }
+        )
+
+
         // const data = await res.json();
 
         // if (res.status === 400 || !data) {
