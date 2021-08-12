@@ -33,18 +33,19 @@ const Login = () => {
             },
             body: JSON.stringify({ email, password }),
             credentials: "include"
-        });
+        })    .then((response) => await response.json())
+        .then((messages) => {console.log("messages");});;
         
-        const data = await res.json();
+        // const data = await res.json();
 
-        if (res.status === 400 || !data) {
-            window.alert('invalid credentials');
-        } else {
-            dispatch({ type: "USER", payload: true });
-            window.alert(`login successful ${data.message}` );
-            cookies.set('myCat',`${data.coky}`, { path: '/' });
-            history.push('/');
-        }
+        // if (res.status === 400 || !data) {
+        //     window.alert('invalid credentials');
+        // } else {
+        //     dispatch({ type: "USER", payload: true });
+        //     window.alert(`login successful ${data.message}` );
+        //     cookies.set('myCat',`${data.coky}`, { path: '/' });
+        //     history.push('/');
+        // }
 
     }
     return (
