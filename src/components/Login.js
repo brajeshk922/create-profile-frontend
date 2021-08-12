@@ -31,7 +31,7 @@ const Login = () => {
             },
             body: JSON.stringify({ email, password }),
             credentials: "include"
-        });
+        }).then((response) => response.json());
 
         const data = await res.json();
         if (res.status === 400 || !data) {
