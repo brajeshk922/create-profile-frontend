@@ -5,7 +5,7 @@ const Contact = () => {
     const [userData, setuserData] = useState({ name: "", email: "", phone: "", message: "" });
     const userContact = async () => {
         try {
-            const res = await fetch('https://create-profile-backend.herokuapp.com/getdata', {
+            const res = await fetch('/getdata', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -35,7 +35,7 @@ const Contact = () => {
     const contactForm = async (e) => {
         e.preventDefault();
         const { name, email, phone, message } = userData;
-        const res = await fetch('https://create-profile-backend.herokuapp.com/contact', {
+        const res = await fetch('/contact', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

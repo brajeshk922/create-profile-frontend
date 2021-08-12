@@ -15,9 +15,8 @@ const About = () => {
     const [userData, setuserData] = useState({});
     const callAboutPage = async () => {
         try {
-            const res = await fetch('https://create-profile-backend.herokuapp.com/about', {
+            const res = await fetch('/about', {
                 method: "GET",
-                mode: "cors",
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json"

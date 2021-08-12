@@ -7,7 +7,7 @@ const Home = () => {
 
     const userHomePage = async () => {
         try {
-            const res = await fetch('https://create-profile-backend.herokuapp.com/getdata', {
+            const res = await fetch('/getdata', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
