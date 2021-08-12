@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core";
 import login from '../images/login.png';
 import { NavLink, useHistory } from 'react-router-dom';
 import { UserContext } from '../App';
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 const useStyle = makeStyles({
     container: {
@@ -31,14 +33,16 @@ const Login = () => {
             },
             body: JSON.stringify({ email, password }),
             credentials: "include"
-        })
-
+        });
+        
         const data = await res.json();
+
         if (res.status === 400 || !data) {
             window.alert('invalid credentials');
         } else {
             dispatch({ type: "USER", payload: true });
-            window.alert(`login successful ${data}` );
+            window.alert(`login successful ${data.message}` );
+            cookies.set('myCat',`${data.coky}`, { path: '/' });
             history.push('/');
         }
 
